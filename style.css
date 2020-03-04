@@ -1,0 +1,35 @@
+#myProgress {
+    margin-left: 2em;
+    width: 50%;
+    background-color: rgb(197, 197, 197);
+  }
+  
+  #myBar {
+    margin-top: 1em;
+    width: 0%;
+    height: 30px;
+    background-color: green;
+transition: width 1s;
+  }
+
+  /* .progress-container::before{
+    content: "0$";
+    float: left;
+  }
+  .progress-container::after{
+    content: "15$";
+    /* z-index: 1; */
+  /* }  */
+/* 
+  @keyframes anim{
+      0%{width: 33.33%,
+     }
+      25%{width: 39.99%}
+      50%{
+          width: 46.65%;
+      }
+      75%{width:53.31}
+      100%{
+          width: 59.97;
+      }
+  } */
