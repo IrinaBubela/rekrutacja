@@ -1,16 +1,13 @@
 let butns = document.querySelectorAll("button")
-let counter = document.getElementById("counter");
+let counterEl = document.getElementById("counter");
 const statusBarEl = document.getElementById("myBar");
 
-function getCounterState() {
-    return parseInt(counter.textContent);
+function getCounterElState() {
+    return parseInt(counterEl.textContent);
 }
 
-console.log(counter.textContent);
-
-
-function setCounterState(state) {
-    return counter.textContent = state;
+function setCounterElState(state) {
+    return counterEl.textContent = state;
 }
 
 function setStatusBarWidth(width) {
@@ -20,116 +17,47 @@ function setStatusBarWidth(width) {
 
 var statusBarWidth = 0;
 function step() {
-    statusBarWidth = statusBarWidth + 6.66;
+    const theSmallestStep = (1 / 15) * 100;
+    statusBarWidth = statusBarWidth + theSmallestStep;
     setStatusBarWidth(statusBarWidth);
-    setCounterState(getCounterState() + 1);
+    setCounterElState(getCounterElState() + 1);
 }
 
 butns.forEach(btn => {
     btn.addEventListener("click", () => {
-        frame(btn.id)
+        defineNumOfSteps(btn.id)
     })
 })
 
-let callCount = 1;
 
-function frame(int) {
-    if (getCounterState() < 15) {
-        console.log(getCounterState());
-
-        switch (int) {
+function defineNumOfSteps(steps) {
+    if (getCounterElState() < 15) {
+        switch (steps) {
             case '1':
                 step();
                 break;
             case '5':
-                var repeaterFunc = setInterval(function () {
-                    if (callCount <= int) {
-                        step();
-                        callCount += 1;
-                    } else {
-                        clearInterval(repeaterFunc);
-                    }
-                }, 800)
+                timeSteps(steps)
                 break;
             case '15':
-                repeaterFunc = setInterval(function () {
-                    if (callCount <= int) {
-                        step();
-                        callCount += 1;
-                    } else {
-                        clearInterval(repeaterFunc);
-                    }
-                }, 800)
+                timeSteps(steps)
                 break;
         }
     }
 }
 
+function timeSteps(steps) {
+    let callCount = 1;
+    var repeaterFunc = setInterval(function () {
+        if (callCount <= steps && getCounterElState() < 15) {
+            step();
+            callCount += 1;
+        } else {
+            clearInterval(repeaterFunc);
+        }
+    }, 400)
+}
 
-
-// var sum = 0;
-// butns.forEach(btn => {
-//     btn.addEventListener("click", () => {
-//         if (sum < 15) {
-//             sum = (sum + parseInt(btn.id)) > 15 ? 15 : sum + parseInt(btn.id);
-//             counter.textContent = sum;
-//             var int = btn.id;
-//             frame(int)
-//             console.log(int);
-
-//         } else {
-//             counter.textContent = sum;
-//         }
-//     })
-// })
-
-// function step() {
-//     console.log('step');
-//     width = width + 6.66;
-//     elem.style.width = width + "%";
-//     setCounterState(getCounterState() + 1);
-// }
-
-// var barInterval = null;
-// var width = 0;
-// function frame(int) {
-//     var elem = document.getElementById("myBar");
-//     if (width >= 100) {
-//         elem.style.width = width + "%";
-//     } else {
-//         switch (int) {
-//             case '1':
-//                 width = width + 6.66;
-//                 elem.style.width = width + "%";
-//                 break;
-//             case '5':
-//                 var counterState = getCounterState()
-//                 if (counterState == 5 && int == "15") {
-//                     barInterval = setInterval(() => {
-//                         step();
-//                         if (width >= 96) {
-//                             clearInterval(barInterval);
-//                         }
-//                     }, 500);
-//                 } else {
-//                     width = (width + 33.33) >= 100 ? width = 100 : width + 33.33;
-//                     elem.style.width = width + "%";
-//                     break;
-//                 }
-
-
-
-
-//             case '15':
-//                 if (width => 5) {
-
-//                 }
-//                 width = (width + 100) >= 100 ? width = 100 : width + 100;
-//                 elem.style.width = width + "%";
-//                 break;
-//         }
-//     }
-// }
 
 
 

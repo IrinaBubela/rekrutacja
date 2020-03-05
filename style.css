@@ -1,17 +1,48 @@
+body{
+  margin:0;
+  padding: 0;
+  background-color: rgb(236, 236, 235);
+  position: relative;
+}
+.content{
+  /* text-align: center; */
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 #myProgress {
-    margin-left: 2em;
+  
     width: 50%;
     background-color: rgb(197, 197, 197);
+    border: 2px solid grey;
   }
   
   #myBar {
-    margin-top: 1em;
     width: 0%;
     height: 30px;
     background-color: green;
-transition: width  1s;
+    transition: width  1s;
+  }
+  
+  .counter {
+  text-align: center;
   }
 
+  button{
+    margin: 2em !important;;
+    width: 3em;
+  }
+
+  .progress-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1{
+    font-size: 20px;
+  }
   /* .progress-container::before{
     content: "0$";
     float: left;
@@ -21,16 +52,4 @@ transition: width  1s;
     /* z-index: 1; */
   /* }  */
 
-  @keyframes anim{
-      0%{width: 33.33%}
-      10%{width: 39.99%}
-      20%{ width: 46.65%;}
-      30%{ width:53.31%}
-      40%{ width: 59.97%}
-      50%{width: 66.63%}
-      60%{width: 73.29%}
-      70%{ width: 79.95%;}
-      80%{ width:86.61%}
-      90%{ width: 93.27%}
-
-  }
+ 

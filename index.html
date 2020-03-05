@@ -7,22 +7,28 @@
     <title>Licznik
     </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="counter">
-        <h1> Licznik: <span id="counter">0</span></h1>
-        <button value="1" id="1">1</button>
-        <button value="5" id="5">5</button>
-        <button value="15" id="15">15</button>
-    </div>
+    <div class="content">
+        <div class="counter">
+            <h1> Licznik: <span id="counter">0</span></h1>
 
-    <div class="progress-container">
-        <div id="myProgress">
-            <div id="myBar"></div>
+            <button type="button" class="btn btn-secondary" id="1">1</button>
+            <button type="button" class="btn btn-secondary" id="5">5</button>
+            <button type="button" class="btn btn-secondary" id="15">15</button>
         </div>
+        <div class="progress-container">
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
 
+        </div>
     </div>
+
+
 
     <script src="script.js"></script>
 </body>
