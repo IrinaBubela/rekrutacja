@@ -1,55 +1,60 @@
 body{
-  margin:0;
-  padding: 0;
   background-color: rgb(236, 236, 235);
+  font-family: 'Lora', serif !important;
+}
+
+.content{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  margin-top: 10em;
+  background-color: rgb(224, 224, 221);
+ }
+
+#myProgress {
+  width: 440px;
+  background-color: rgb(243, 240, 240);
+  border: 2px solid rgba(53, 51, 51, 0.37);
+  border-radius: 5px;
+}
+  
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: rgb(8, 112, 8);
+  transition: width 1s;
+}
+  
+.counter {
+  text-align: center;
+}
+
+button{
+  margin: 2em !important;;
+  width: 100px;
+}
+
+.progress-container{
   position: relative;
 }
-.content{
-  /* text-align: center; */
-  position: absolute;
-  transform: translate(-50%, -50%);
+
+h1{
+  font-size: 30px !important;
 }
-#myProgress {
-  
-    width: 50%;
-    background-color: rgb(197, 197, 197);
-    border: 2px solid grey;
-  }
-  
-  #myBar {
-    width: 0%;
-    height: 30px;
-    background-color: green;
-    transition: width  1s;
-  }
-  
-  .counter {
-  text-align: center;
-  }
 
-  button{
-    margin: 2em !important;;
-    width: 3em;
-  }
 
-  .progress-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+#firstDollar,  #secDollar{
+  font-size: 20px ;
+  position: absolute;
+  top: 5px;
+}
 
-  h1{
-    font-size: 20px;
-  }
-  /* .progress-container::before{
-    content: "0$";
-    float: left;
-  }
-  .progress-container::after{
-    content: "15$";
-    /* z-index: 1; */
-  /* }  */
+#firstDollar{
+  left: -30px;
+}
 
- 
+#secDollar{
+  right: -40px;
+}

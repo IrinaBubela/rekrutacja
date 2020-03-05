@@ -1,5 +1,5 @@
-let butns = document.querySelectorAll("button")
-let counterEl = document.getElementById("counter");
+const butns = document.querySelectorAll("button")
+const counterEl = document.getElementById("counter");
 const statusBarEl = document.getElementById("myBar");
 
 function getCounterElState() {
