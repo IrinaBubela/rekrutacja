@@ -29,9 +29,9 @@ butns.forEach(btn => {
     })
 })
 
-
+const maxCounterElState = 15;
 function defineNumOfSteps(steps) {
-    if (getCounterElState() < 15) {
+    if (getCounterElState() < maxCounterElState) {
         switch (steps) {
             case '1':
                 step();
@@ -49,7 +49,7 @@ function defineNumOfSteps(steps) {
 function timeSteps(steps) {
     let callCount = 1;
     var repeaterFunc = setInterval(function () {
-        if (callCount <= steps && getCounterElState() < 15) {
+        if (callCount <= steps && getCounterElState() < maxCounterElState) {
             step();
             callCount += 1;
         } else {
